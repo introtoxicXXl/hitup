@@ -1,0 +1,6 @@
+.nav-bar{
+  border-radius: 15px;
+  background: #cdcbcb;
+  box-shadow:  -19px 19px 52px #b0afaf,
+               19px -19px 52px #eae7e7;
+}
