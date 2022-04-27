@@ -7,7 +7,7 @@ function CustomLink({ children, to, ...props }) {
   let match = useMatch({ path: resolved.pathname, end: true });
 
   return (
-    <div className='text-center'>
+    <div className='text-center mb-3'>
       <Link className={`custom-link ${match ? 'active' : ''}`}
         style={{
           color: match && '#4b31bf'
