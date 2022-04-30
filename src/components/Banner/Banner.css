@@ -1,0 +1,126 @@
+.banner{
+  height: 88.7vh;
+  width: 100%;
+  margin: 0;
+}
+.home-left{
+  padding-left: 100px;
+  flex-basis: 58%;
+}
+.home-title{
+  font-size: 60px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+.home-right{
+  background-color: #8368FF;
+  border-top-left-radius: 30%;
+  border-bottom-left-radius: 30%;
+  z-index: -5;
+  flex-basis: 40%;
+}
+.header-object{
+  position: absolute;
+  right: 10%;
+  top: 20%;
+  z-index: -10;
+}
+.header-img{
+  z-index: 10;
+  position: absolute;
+  top: 10%;
+  left: 18%;
+  height: 87%;
+  width: 68%;
+}
+
+@media screen and (max-width:991px) and (min-width:766px) {
+  .banner{
+    height: 60vh;
+  }
+  .home-left{
+    padding-left: 30px;
+    flex-basis: 48%;
+  }
+  .home-right{
+    flex-basis: 50%;
+  }
+  .home-info p{
+    font-size: 13px;
+  }
+  .home-title{
+    font-size: 30px;
+  }
+  .header-img{
+    width: 68%;
+    height: 83%;
+  }
+  .header-object{
+    height: 40%;
+    width: 40%;
+  }
+}
+@media screen and (max-width:765px) and (min-width:577px) {
+  .banner{
+    height: 50vh;
+  }
+  .home-left{
+    padding-left: 30px;
+    background-color: #8368FF;
+    padding: 30px;
+  }
+  .home-info p{
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    margin-top: 30px;
+  }
+  .home-info span{
+    color: black !important;
+  }
+  .home-info button{
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+  }
+  .home-title{
+    font-size: 45px;
+    text-align: center;
+    color: #fff;
+  }
+  .home-title span{
+    color: black !important;
+  }
+}
+@media screen and (max-width:576px) and (min-width:0px) {
+  .banner{
+    height: 48vh;
+  }
+  .home-left{
+    padding-left: 30px;
+    background-color: #8368FF;
+    padding: 30px;
+  }
+  .home-info p{
+    font-size: 10px;
+    text-align: center;
+    color: white;
+    margin-top: 30px;
+  }
+  .home-info span{
+    color: black !important;
+  }
+  .home-info button{
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+  }
+  .home-title{
+    font-size: 26px;
+    text-align: center;
+    color: #fff;
+  }
+  .home-title span{
+    color: black !important;
+  }
+}
