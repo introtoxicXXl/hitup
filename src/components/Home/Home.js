@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './Home.css';
 import AboutGym from '../AboutGym/AboutGym';
-import Services from '../Services/Services';
 import Banner from '../Banner/Banner';
+import Services from '../Services/Services';
+
 
 const Home = () => {
   const [services, setServices] = useState([]);
@@ -12,6 +13,7 @@ const Home = () => {
       .then(res => res.json())
       .then(data => setServices(data))
   }, [])
+
   return (
     <div>
       <section id="banner">
@@ -21,9 +23,7 @@ const Home = () => {
         <AboutGym></AboutGym>
       </section>
       <section id="services" className='container'>
-        <Services 
-        services={services}
-        ></Services>
+        <Services services={services}></Services>
       </section>
     </div>
   );

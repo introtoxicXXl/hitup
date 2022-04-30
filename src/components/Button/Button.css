@@ -4,12 +4,14 @@
   border: 2px solid orange;
   padding: 10px 20px;
   border-radius: 8px;
-  color: #fff;
+  color: rgba(39, 35, 35, 0.814);
   transition: .2s all;
+  max-width: 140px;
 }
 .custom-button:hover{
   background-color: #8368FF;
   border: 2px solid #000;
+  color: rgb(255, 255, 255);
 }
 
 @media screen and (max-width:991px) and (min-width:766px){
