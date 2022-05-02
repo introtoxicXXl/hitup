@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logIn from '../../img/login.svg';
 import './SignIn.css';
 
 const SignIn = () => {
+  const [validated, setValidated] = useState(false);
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    setValidated(true);
+  };
+
+
+
+
   return (
     <section className="container">
       <div className="row row-cols-lg-2 row-cols-md-2 row-cols-sm-1 row-cols-1 sign-in">
@@ -12,21 +27,21 @@ const SignIn = () => {
           <img className='w-75' src={logIn} alt="" />
         </div>
         <div className="col d-flex justify-content-center align-items-center">
-          <Form className='w-75'>
+          <Form className='w-75' onSubmit={handleSubmit} validated={validated} noValidate>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
+              <Form.Control type="email" placeholder="Enter email" required/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
+              <Form.Control type="password" placeholder="Password" required/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
               <Form.Check type="checkbox" label="Check me out" />
             </Form.Group>
-              <p>New in HitUp? <Link to='/signup'>Sign Up</Link> </p>
-            <Button variant="primary" type="submit">
-              Submit
+            <p>New in HitUp? <Link className='signin-link' to='/signup'>Sign Up</Link> </p>
+            <Button variant="outline-primary" type="submit">
+              Sign In
             </Button>
           </Form>
         </div>
