@@ -3,6 +3,7 @@ import './service.css'
 import React from 'react';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 import Button from '../Button/Button';
+import { Link } from 'react-router-dom';
 
 const Service = ({ service }) => {
   const { name, price, description, img, points } = service;
@@ -17,8 +18,10 @@ const Service = ({ service }) => {
             points.map(point => <li className='list-unstyled my-3 fs-6'> <FontAwesomeIcon className='icon me-2 fs-6' icon={faCheckCircle} /> {point}</li>)
           }
         </div>
-        <div className= 'm-auto'>
-        <Button button={"Check Out"}></Button>
+        <div className='m-auto'>
+          <Link to='/checkout'>
+            <Button button={"Check Out"}></Button>
+          </Link>
         </div>
       </div>
     </div>

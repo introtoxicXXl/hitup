@@ -8,6 +8,9 @@ import SignIn from './components/SignIn/SignIn'
 import Footer from './components/Footer/Footer';
 import SignUp from './components/SignUp/SignUp';
 import PageNotFound from './components/PageNotFound/PageNotFound';
+import Blogs from './components/Blogs/Blogs';
+import RequiredAuth from './components/RequiredAuth/RequiredAuth';
+import CheckOut from './components/CheckOut/CheckOut';
 
 
 
@@ -18,11 +21,15 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/home' element={<Home />}></Route>
-        <Route path='/about' element={
-          <About />
-        }></Route>
+        <Route path='/about' element={<About />}></Route>
         <Route path='/signin' element={<SignIn />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
+        <Route path='/blog' element={<Blogs />}></Route>
+        <Route path='/checkout' element={
+          <RequiredAuth>
+            <CheckOut></CheckOut>
+          </RequiredAuth>
+        }></Route>
         <Route path='*' element={<PageNotFound></PageNotFound>}></Route>
       </Routes>
       <Footer></Footer>

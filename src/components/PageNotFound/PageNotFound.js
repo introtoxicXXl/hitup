@@ -3,8 +3,8 @@ import picture from './404.svg';
 import './PageNotFound.css';
 const PageNotFound = () => {
   return (
-    <div className='not-found'>
-      <img src={picture} alt="" />
+    <div className='not-found d-flex justify-content-center'>
+      <img className='w-50' src={picture} alt="" />
     </div>
   );
 };

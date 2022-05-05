@@ -1,11 +1,18 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { Container, Navbar, Nav} from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../firebase.init';
 import logo from '../../img/logo.png';
 import CustomLink from '../CustomLink/CustomLink';
 import './Header.css';
 
 const Header = () => {
+  const [user] = useAuthState(auth);
+    const handleSignOut = () => {
+        signOut(auth);
+    }
   
   return (
     <div className='nav-bar w-100'>
@@ -18,8 +25,11 @@ const Header = () => {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ms-auto">
                 <CustomLink as={Link} to="/home">Home</CustomLink>
+                <CustomLink as={Link} to="/blog">Blogs</CustomLink>
                 <CustomLink as={Link} to="/about">About</CustomLink>
-                <CustomLink as={Link} to="/signin">Sign In</CustomLink>
+                {
+                  user ? `<CustomLink as={Link} onClick=${handleSignOut}>Sign Out</CustomLink>` : <CustomLink as={Link} to="/signin">Sign In</CustomLink>
+                }
               </Nav>
             </Navbar.Collapse>
         </Container>
