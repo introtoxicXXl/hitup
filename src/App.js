@@ -7,6 +7,8 @@ import About from './components/About/About';
 import SignIn from './components/SignIn/SignIn'
 import Footer from './components/Footer/Footer';
 import SignUp from './components/SignUp/SignUp';
+import PageNotFound from './components/PageNotFound/PageNotFound';
+
 
 
 function App() {
@@ -14,13 +16,14 @@ function App() {
     <div className='App'>
       <Header></Header>
       <Routes>
-        <Route path='/' element={<Home/>}></Route>
-        <Route path='/home' element={<Home/>}></Route>
-          <Route path='/about' element={
-              <About/>
-          }></Route>
-        <Route path='/signin' element={<SignIn/>}></Route>
-        <Route path='/signup' element={<SignUp/>}></Route>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/home' element={<Home />}></Route>
+        <Route path='/about' element={
+          <About />
+        }></Route>
+        <Route path='/signin' element={<SignIn />}></Route>
+        <Route path='/signup' element={<SignUp />}></Route>
+        <Route path='*' element={<PageNotFound></PageNotFound>}></Route>
       </Routes>
       <Footer></Footer>
     </div>
