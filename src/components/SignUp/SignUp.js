@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link,  useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import welcome from '../../img/welcome.svg'
 import Loading from '../Loading/Loading';
@@ -26,6 +26,7 @@ const SignUp = () => {
     return <Loading></Loading>
   }
 
+  // handel sign up
   const handleSignUp = (event) => {
     event.preventDefault()
     const form = event.currentTarget;

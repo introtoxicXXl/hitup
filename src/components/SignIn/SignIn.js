@@ -26,6 +26,7 @@ const SignIn = () => {
   ] = useSignInWithEmailAndPassword(auth);
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
+  // handel sing in
   const handleSignIn = (event) => {
     event.preventDefault();
     const form = event.currentTarget;
@@ -39,6 +40,7 @@ const SignIn = () => {
 
     signInWithEmailAndPassword(email, password);
   };
+
   if (user) {
     navigate(from, { replace: true });
   }
@@ -46,9 +48,10 @@ const SignIn = () => {
     errorMsg = <p className='text-danger'>Error: {error.message}</p>
   }
   if (loading) {
-    <Loading></Loading>
+    return <Loading></Loading>
   }
 
+  // reset password handel
   const resetPassword = async () => {
     const email = emailRef.current.value;
     if (email) {
