@@ -1,10 +1,12 @@
 import React from 'react';
+import booking from '../../img/booking.png';
 
 const CheckOut = () => {
   return (
-    <div>
-      <h2>this is check out</h2>
-    </div>
+    <div className='container vh-100'>
+    <br /><br /><br />
+    <img className="img-fluid" src={booking} alt="" />
+</div>
   );
 };
 

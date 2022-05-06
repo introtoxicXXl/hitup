@@ -28,7 +28,7 @@ const Header = () => {
                 <CustomLink as={Link} to="/blog">Blogs</CustomLink>
                 <CustomLink as={Link} to="/about">About</CustomLink>
                 {
-                  user ? `<CustomLink as={Link} onClick=${handleSignOut}>Sign Out</CustomLink>` : <CustomLink as={Link} to="/signin">Sign In</CustomLink>
+                  user ? `<button type="button" class="btn btn-light ms-3" onClick=${handleSignOut}>Sign Out</button>` : <CustomLink as={Link} to="/signin">Sign In</CustomLink>
                 }
               </Nav>
             </Navbar.Collapse>

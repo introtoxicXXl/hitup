@@ -14,7 +14,7 @@ const SignIn = () => {
   const passwordRef = useRef('');
   const navigate = useNavigate();
   const location = useLocation();
-  let from = location.state?.from?.pathname || "/";
+  const from = location.state?.from?.pathname || "/";
   let errorMsg;
   const [
     signInWithEmailAndPassword,
@@ -24,7 +24,7 @@ const SignIn = () => {
   ] = useSignInWithEmailAndPassword(auth);
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
-  const handleSubmit = (event) => {
+  const handleSignIn = (event) => {
     event.preventDefault();
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
@@ -43,7 +43,7 @@ const SignIn = () => {
   if (error) {
     errorMsg = <p className='text-danger'>Error: {error.message}</p>
   }
-  if(loading){
+  if (loading) {
     <Loading></Loading>
   }
 
@@ -59,7 +59,6 @@ const SignIn = () => {
   }
 
 
-
   return (
     <section className="container">
       <div className="row row-cols-lg-2 row-cols-md-2 row-cols-sm-1 row-cols-1 sign-in">
@@ -67,23 +66,25 @@ const SignIn = () => {
           <img className='w-75' src={logIn} alt="" />
         </div>
         <div className="col d-flex justify-content-center align-items-center">
-          <Form className='w-75' onSubmit={handleSubmit} validated={validated} noValidate>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" ref={emailRef} placeholder="Enter email" required />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" ref={passwordRef} placeholder="Password" required />
-            </Form.Group>
+          <div className='w-75'>
+            <Form onSubmit={handleSignIn} validated={validated} noValidate>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control type="email" ref={emailRef} placeholder="Enter email" required />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control type="password" ref={passwordRef} placeholder="Password" required />
+              </Form.Group>
+              <Button variant="outline-primary" type="submit">
+                Sign In
+              </Button>
+            </Form>
             {errorMsg}
-            <p>New in HitUp? <Link className='signin-link' to='/signup'>Sign Up</Link> </p>
+            <p className='mt-3'>New in HitUp? <Link className='signin-link' to='/signup'>Sign Up</Link> </p>
             <p>Forget Password? <button className='btn btn-link text-warning pe-auto text-decoration-none' onClick={resetPassword}>Reset Password</button> </p>
-            <ToastContainer/>
-            <Button variant="outline-primary" type="submit">
-              Sign In
-            </Button>
-          </Form>
+            <ToastContainer />
+          </div>
         </div>
       </div>
     </section>
