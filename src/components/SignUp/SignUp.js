@@ -27,7 +27,7 @@ const SignUp = () => {
   }
 
   // handel sign up
-  const handleSignUp =  (event) => {
+  const handleSignUp = async (event) => {
     event.preventDefault()
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
@@ -37,8 +37,9 @@ const SignUp = () => {
     const name = nameRef.current.value;
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-    createUserWithEmailAndPassword(email, password);
-    updateProfile({ displayName: name });
+    await createUserWithEmailAndPassword(email, password);
+    await updateProfile({ displayName: name });
+    navigate('/home');
   };
 
 
