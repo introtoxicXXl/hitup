@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 const Blogs = () => {
     return (
         <div>
+        {/* blog section */}
             <br /><br /><br />
             <h1 className='mt-5 mb-5 text-center fw-bold'>My blogs</h1>
             <section class="blog-sec container">

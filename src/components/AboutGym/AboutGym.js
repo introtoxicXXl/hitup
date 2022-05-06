@@ -7,6 +7,7 @@ const AboutGym = () => {
   
   return (
     <div>
+    {/* about gym section */}
       <div className="row row-cols-lg-2 row-cols-md-1 row-cols-sm-1 row-cols-1 about-gym">
         <div className="col">
           <div className='about-gym-img'>

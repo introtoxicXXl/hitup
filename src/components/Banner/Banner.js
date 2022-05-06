@@ -7,6 +7,7 @@ import './Banner.css';
 const Banner = () => {
   return (
     <section id="banner">
+    {/* banner section */}
         <div className="row row-cols-lg-2 row-cols-md-2 row-cols-sm-1 row-cols-1 banner">
           <div className="col p-0">
             <div className="home-left d-flex align-items-center h-100">

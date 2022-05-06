@@ -3,6 +3,7 @@ import './footer.css';
 const Footer = () => {
     return (
         <div>
+        {/* footer section */}
             <footer class="footer">
                 <div class="footer-left col-md-4 col-sm-6">
                     <p class="about">

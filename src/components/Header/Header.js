@@ -16,6 +16,7 @@ const Header = () => {
 
   return (
     <div className='nav-bar w-100'>
+    {/* header section */}
       <Navbar bg="light" expand="lg">
         <Container>
           <Navbar.Brand as={Link} to='/home'>

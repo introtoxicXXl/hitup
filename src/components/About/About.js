@@ -3,6 +3,7 @@ import './About.css';
 const About = () => {
     return (
         <div>
+        {/* about me section */}
             <br /><br /><br />
             <section id="about-section" class="p-100 pb-2 bg-one-dark vh-100">
                 <div class="container">

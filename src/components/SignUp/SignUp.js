@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import welcome from '../../img/welcome.svg'
 import Loading from '../Loading/Loading';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const SignUp = () => {
   const [validated, setValidated] = useState(false);
@@ -25,7 +26,7 @@ const SignUp = () => {
     return <Loading></Loading>
   }
 
-  const handleSignUp =  (event) => {
+  const handleSignUp = (event) => {
     event.preventDefault()
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
@@ -48,28 +49,31 @@ const SignUp = () => {
           <img className='w-75' src={welcome} alt="" />
         </div>
         <div className="col d-flex justify-content-center align-items-center">
-          <Form className='w-75' onSubmit={handleSignUp} validated={validated} noValidate>
-            <Form.Group className="mb-3" controlId="formBasicName">
-              <Form.Label>Your Name</Form.Label>
-              <Form.Control ref={nameRef} type="text" placeholder="Enter name" required />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
-            </Form.Group>
-            <Form.Group className="mb-3 d-flex" controlId="formBasicCheckbox">
-              <Form.Check className='me-2' onClick={() => setAgree(!agree)} type="checkbox" required />
-              <Form.Label className={`ps-2 ${!agree ? 'text-danger' : 'text-success'}`}>Accept HitUp Terms and Conditions</Form.Label>
-            </Form.Group>
-            <p>Already have an account in <span style={{ color: '#4b31bf' }} className='fw-bold'>HitUp</span> ? <Link className='signin-link' to='/signin'>Sign In</Link> </p>
-            <Button variant="outline-primary" type="submit" disabled={!agree}>
-              Sign Up
-            </Button>
-          </Form>
+          <div className='w-75'>
+            <Form onSubmit={handleSignUp} validated={validated} noValidate>
+              <Form.Group className="mb-3" controlId="formBasicName">
+                <Form.Label>Your Name</Form.Label>
+                <Form.Control ref={nameRef} type="text" placeholder="Enter name" required />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
+              </Form.Group>
+              <Form.Group className="mb-3 d-flex" controlId="formBasicCheckbox">
+                <Form.Check className='me-2' onClick={() => setAgree(!agree)} type="checkbox" required />
+                <Form.Label className={`ps-2 ${!agree ? 'text-danger' : 'text-success'}`}>Accept HitUp Terms and Conditions</Form.Label>
+              </Form.Group>
+              <p>Already have an account in <span style={{ color: '#4b31bf' }} className='fw-bold'>HitUp</span> ? <Link className='signin-link' to='/signin'>Sign In</Link> </p>
+              <Button variant="outline-primary" type="submit" disabled={!agree}>
+                Sign Up
+              </Button>
+            </Form>
+            <SocialLogin></SocialLogin>
+          </div>
         </div>
       </div>
     </section>
