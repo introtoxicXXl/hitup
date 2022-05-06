@@ -6,6 +6,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
 import logIn from '../../img/login.svg';
 import Loading from '../Loading/Loading';
+import SocialLogin from '../SocialLogin/SocialLogin';
 import './SignIn.css';
 
 const SignIn = () => {
@@ -84,6 +85,7 @@ const SignIn = () => {
             <p className='mt-3'>New in HitUp? <Link className='signin-link' to='/signup'>Sign Up</Link> </p>
             <p>Forget Password? <button className='btn btn-link text-warning pe-auto text-decoration-none' onClick={resetPassword}>Reset Password</button> </p>
             <ToastContainer />
+            <SocialLogin></SocialLogin>
           </div>
         </div>
       </div>

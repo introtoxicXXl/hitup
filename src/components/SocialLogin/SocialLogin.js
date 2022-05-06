@@ -1,10 +1,10 @@
 import React from 'react';
-import googleIcon from '../../../../images/social-icons/google-icon.png';
-import fbIcon from '../../../../images/social-icons/facebook-icon.png';
+import googleIcon from '../../img/google-icon.png';
+import fbIcon from '../../img/facebook-icon.png';
 import { useSignInWithFacebook, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import auth from '../../../../firebase.init';
 import { useNavigate } from 'react-router-dom';
-import Loading from '../../../Loading/Loading';
+import Loading from '../Loading/Loading';
+import auth from '../../firebase.init';
 const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const [signInWithFacebook, user2, loading2, error2] = useSignInWithFacebook(auth);
